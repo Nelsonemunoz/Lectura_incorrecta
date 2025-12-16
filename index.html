@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2931 Lectura Incorrecta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2931 Lectura Incorrecta</h1>
+        
+        <div class="grid-container">
+            <!-- Datos de lecturas -->
+            <div class="form-group">
+                <label for="lecturaAnterior">Lectura Anterior (kWh):</label>
+                <input type="number" id="lecturaAnterior" placeholder="Ej: 980">
+            </div>
+            
+            <div class="form-group">
+                <label for="fechaAnterior">Fecha Lectura Anterior:</label>
+                <input type="date" id="fechaAnterior">
+            </div>
+            
+            <div class="form-group">
+                <label for="lecturaActual">Lectura Actual en Factura (kWh):</label>
+                <input type="number" id="lecturaActual" placeholder="Ej: 1100">
+            </div>
+            
+            <div class="form-group">
+                <label for="fechaActual">Fecha Lectura Actual:</label>
+                <input type="date" id="fechaActual">
+            </div>
+            
+            <div class="form-group">
+                <label for="lecturaUsuario">Lectura del Usuario (kWh):</label>
+                <input type="number" id="lecturaUsuario" placeholder="Ej: 1020">
+            </div>
+            
+            <div class="form-group">
+                <label for="fechaUsuario">Fecha Lectura del Usuario:</label>
+                <input type="date" id="fechaUsuario">
+            </div>
+            
+            <!-- Campos existentes -->
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre del Usuario:</label>
+                <input type="text" id="nombreUsuario" placeholder="Ej: Pepito Perez">
+            </div>
+            
+            <div class="form-group">
+                <label for="numeroProceso">Número de Proceso:</label>
+                <input type="text" id="numeroProceso" placeholder="Ej: 1234567890">
+            </div>
+
+            <!-- 5 Nuevas casillas solicitadas -->
+            <div class="form-group">
+                <label for="numeroFactura">Número de Factura:</label>
+                <input type="text" id="numeroFactura" placeholder="Ej: F-123456">
+            </div>
+            
+            <div class="form-group">
+                <label for="periodoFacturacion">Periodo de Facturación:</label>
+                <input type="text" id="periodoFacturacion" placeholder="Ej: 22 de junio al 22 de julio de 2024">
+            </div>
+            
+            <div class="form-group">
+                <label for="valorPesosAjustado">Valor Pesos Ajustado:</label>
+                <input type="number" id="valorPesosAjustado" placeholder="Ej: 50000">
+            </div>
+            
+            <div class="form-group">
+                <label for="valorRealCancelar">Valor Real a Cancelar:</label>
+                <input type="number" id="valorRealCancelar" placeholder="Ej: 45000">
+            </div>
+            
+            <div class="form-group">
+                <label for="causaFinalRespuesta">Causa Final de Respuesta:</label>
+                <input type="text" id="causaFinalRespuesta" placeholder="Ej: acceder">
+            </div>
+        </div>
+        
+        <button id="calcular">Calcular Ajuste</button>
+        
+        <!-- Sección para el texto de respuesta auto-rellenable -->
+        <div id="textoRespuesta" class="response-text"></div>
+        
+        <div id="result" class="result">
+            <h2>Resultados del Cálculo</h2>
+            
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="result-label">Nombre del Usuario:</div>
+                    <div id="nombreUsuarioResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Número de Proceso:</div>
+                    <div id="numeroProcesoResultado"></div>
+                </div>
+
+                <!-- Resultados para nuevos campos -->
+                <div class="result-item">
+                    <div class="result-label">Número de Factura:</div>
+                    <div id="numeroFacturaResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Periodo de Facturación:</div>
+                    <div id="periodoFacturacionResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Valor Pesos Ajustado:</div>
+                    <div id="valorPesosAjustadoResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Valor Real a Cancelar:</div>
+                    <div id="valorRealCancelarResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Causa Final de Respuesta:</div>
+                    <div id="causaFinalRespuestaResultado"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Consumo Real:</div>
+                    <div id="consumoReal"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Días Transcurridos:</div>
+                    <div id="diasTranscurridos"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Consumo Diario:</div>
+                    <div id="consumoDiario"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Consumo en 30 días:</div>
+                    <div id="consumo30Dias"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Lectura Correcta:</div>
+                    <div id="lecturaCorrecta"></div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-label">Ajuste Necesario:</div>
+                    <div id="ajusteNecesario"></div>
+                </div>
+            </div>
+            
+            <div class="step-container">
+                <h3>Proceso de Cálculo:</h3>
+                <div id="pasos"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Hecho por CSANCHBU</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
