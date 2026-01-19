@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const textoRespuesta = `
         <p>Para ESSA es muy importante conocer, entender y brindar una solución a las inquietudes de sus clientes y usuarios, por ello analizamos su solicitud registrada mediante proceso número ${numeroProceso}; y con el fin de brindarle la atención correspondiente, le comunicamos:</p>
         
-        <p>Se procede a analizar la factura número ${numeroFactura} emitida en el mes de ${mesActual} de ${anoActual}, donde se registraron ${lecturaActual-lecturaAnterior} kilovatios hora (kWh) para el periodo comprendido entre el ${periodoFacturacion}. En relación con los consumos facturados, es importante precisar que ESSA mensualmente envía personal idóneo a tomar la lectura en el equipo de medida que se encuentra instalado en el predio y de esta manera determinar los kWh consumidos por el cliente o usuario para cada periodo.</p>
+        <p>Se procede a analizar la factura número ${numeroFactura}, en la cual se registraron ${lecturaActual-lecturaAnterior} kilovatios hora (kWh) para el periodo comprendido entre el ${periodoFacturacion}. En relación con los consumos facturados, es importante precisar que ESSA mensualmente envía personal técnico para realizar la toma de lectura en el equipo de medida que se encuentra instalado en el predio y de esta manera determinar los kWh consumidos por el cliente o usuario para cada periodo.</p>
         
         <p>Lo que quiere decir, que el consumo se ha determinado por diferencia de lecturas tomadas desde el equipo de medida, siendo el resultado de la sencilla resta entre la lectura actual y la lectura anterior.</p>
         
-        <p>Ahora bien; teniendo en cuenta que la lectura ${lecturaUsuario} kWh suministrada por usted en la reclamación, se procede a modificar el consumo facturado, retirando ${Math.abs(ajusteNecesario)} kWh equivalentes al valor de $${valorPesosAjustado}, actualizando la lectura hasta ${lecturaCorrecta} kWh.</p>
+        <p>Ahora bien; teniendo en cuenta la lectura ${lecturaUsuario} kWh suministrada por usted en la reclamación, se procede a modificar el consumo facturado, retirando ${Math.abs(ajusteNecesario)} kWh equivalentes al valor de $${valorPesosAjustado}, actualizando la lectura hasta ${lecturaCorrecta} kWh.</p>
         
         <p>Así las cosas, en cumplimiento del artículo 155 de la ley 142 de 1994, le informamos que no se entrega factura de sumas no objeto de reclamo, ni se constituyen valores en reclamación, teniendo en cuenta el ajuste realizado. Se emite la factura modificada por valor de $${valorRealCancelar}.</p>
         
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <p>Finalmente se notifica personalmente al señor(a) ${nombreUsuario} de la presente decisión empresarial.</p>
         
-        <p>La interposición de recursos podrá realizarla en nuestras oficinas de atención al cliente; o mediante nuestra página web www.essa.com.co: a través de la opción "transacciones" – "solicita tu PQR", o comunicándose a la línea de atención al cliente 018000 971903. Si es de su preferencia también podrá realizar su solicitud escribiendo al WhatsApp Empresarial 318 833 91 21 o en www.essa.com.co opción chat, botón servicio al cliente, donde "Luisa" nuestra asistente virtual lo orientará.</p>
+        <p>La interposición de recursos podrá realizarla en nuestras oficinas de atención al cliente; o mediante nuestra página web www.essa.com.co: a través de la opción "transacciones" – "solicita tu PQR", o comunicándose a la línea de atención al cliente 01 8000 97 19 03. Si es de su preferencia también podrá realizar su solicitud escribiendo al WhatsApp Empresarial 318 833 91 21 o en www.essa.com.co opción chat, botón servicio al cliente, donde "Luisa" nuestra asistente virtual lo orientará.</p>
         `;
         
         // Mostrar texto de respuesta
